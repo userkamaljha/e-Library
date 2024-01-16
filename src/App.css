@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --blue : #003de7;
+--black : #000000;
+--grey: #dbdbde;
+--white:#ffff;
+}
+html,#root,body{
+  height: 100%;
+  width: 100%;
+  background-color: var(--white) ;
+
+}
+
