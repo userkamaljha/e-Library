@@ -1,9 +1,9 @@
 # e Library - An Online Library powered by Google Book API
 
-**Live site: https://**
+**Live site: https://e-library-mu.vercel.app/**
 
 
 <br>
-![Site Preview](./Preview.png)
+[Preview.png](https://i.postimg.cc/8CPzGwsM/Preview.png)
 
 <br>
