@@ -68,7 +68,7 @@ function Books() {
 
         </div>
         
-        {books.length !== 0 ? ( <div className="grid grid-cols-2 rounded-2xl gap-6 gap-y-6 lg:grid-cols-5 lg:gap-20 lg:gap-y-8 lg:p-3 lg:min-h-96"
+        {books?.length !== 0 ? ( <div className="grid grid-cols-2 rounded-2xl gap-6 gap-y-6 lg:grid-cols-5 lg:gap-20 lg:gap-y-8 lg:p-3 lg:min-h-96"
          >
         <Card key={books?.id} getFavorites= {getFavorites} books = {books}/>
         </div>) :<div className="flex h-96 justify-center items-center"

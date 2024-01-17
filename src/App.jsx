@@ -22,7 +22,7 @@ function App() {
     let url1 = `${import.meta.env.VITE_FETCH_URL}${query || 'mostreadbook'}&startIndex=0&maxResults=30`;
     let url2 = `${import.meta.env.VITE_FETCH_URL}${query || 'mostreadbook'}&startIndex=0&maxResults=30&key=${import.meta.env.VITE_API_KEY}`;
 
-    fetch(url1 || url2)
+    fetch(url2)
     .then((res)=> res.json())
     .then((data)=> setbooks(data.items))
     .catch((err)=> console.log(err))

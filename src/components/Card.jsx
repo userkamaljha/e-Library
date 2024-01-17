@@ -43,10 +43,10 @@ function Card({ books, getFavorites }) {
   ////////////////////// favorites feature code ends //////////////////////////
 
 
-  return (
+ { return books? (
     <>
       {books?.map((book) => (
-        <div
+       <div
           className={` flex flex-col px-3 lg:px-0 items-center lg:block`}
           key={book.id}
         >
@@ -90,10 +90,15 @@ function Card({ books, getFavorites }) {
               </button>
             )}
           </div>
-        </div>
-      ))}
+        </div>)
+      )} 
     </>
-  );
+
+  ) : <div className='my-6'><h1 className="text-lg text-semibold">we have reached our search quota for the day. Please consider
+  trying again after some time. Thank you for your understanding and
+  patience.</h1>
+ </div>}
+
 }
 
 export default Card;
