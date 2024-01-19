@@ -5,16 +5,25 @@ import { IoMail } from "react-icons/io5";
 import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
+
 
 
 function Bookname() {
   let {id} = useParams();
   let [book, setBook] = useState({})
   useEffect(()=>{
-  fetch(`${import.meta.env.VITE_BOOK_DETAILS_URL}${id}`)
-   .then((res)=> res.json())
-     .then((data)=> setBook(data))
-  },[id]);
+    let url = `${import.meta.env.VITE_BOOK_DETAILS_URL}${id}`
+       ;(async()=>{
+          try {
+            let response = await axios.get(url)
+            setBook(response.data);
+          } catch (error) {
+            console.log('error', error);
+          }
+        })()
+
+  },[]);
 
   const removeHtmlTags = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');

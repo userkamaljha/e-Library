@@ -71,7 +71,7 @@ function Categories() {
         <div className=" grid grid-cols-2 rounded-2xl gap-6 gap-y-6 lg:grid-cols-4 lg:gap-10 lg:gap-y-8 lg:p-3 lg:min-h-full my-10 "
          >
              {categories?.map((category) => (
-             <div className='bg-[#4169e1e0] cursor-pointer hover:bg-[#4169e1] rounded-xl text-white w-full flex items-center justify-center text-center h-full p-6 py-16 border' onClick={()=> navigate(`/categories/${category}`)} >
+             <div className='bg-[#4169e1e0] cursor-pointer hover:bg-[#4169e1] rounded-xl text-white w-full flex items-center justify-center text-center h-full p-6 py-16 border' key = {Math.random()} onClick={()=> navigate(`/categories/${category}`)} >
 
                 <h1 className='text-2xl capitalize'>{category || 'not found'}</h1>
 

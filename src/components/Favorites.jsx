@@ -36,7 +36,10 @@ function Favorites() {
   };
 
   // send to app.jsx
-  getFavorites(favorites);
+  useEffect(()=>{
+    getFavorites(favorites);
+
+  },[favorites])
 
   let removeFavorites = (id) => {
     const currentFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -124,8 +127,8 @@ function Favorites() {
         <div className="flex justify-between lg:justify-start lg:gap-20 flex-wrap"
          >
          
-        {fav.length>0 ? fav.map((book)=>(
-          <div className=' w-36'>
+        {fav?.length>0 ? fav.map((book)=>(
+          <div className=' w-36' key={book.id}>
          <div className=" relative hover:scale-110   transition duration-400 cursor-pointer bg-green-100 rounded-lg  object-center h-40 w-full   lg:h-36  text-center my-6">
             <img
               onClick={() => navigate(`/books/${book.id}`)}
