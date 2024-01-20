@@ -21,7 +21,7 @@ function CategoryList() {
 
 
     useEffect(()=>{
-        fetch(`${import.meta.env.VITE_FETCH_URL}${'top'+ category  || 'mostreadbook2023'}&startIndex=0&maxResults=30&`)
+        fetch(`${import.meta.env.VITE_FETCH_URL}${'top'+ category  || 'mostreadbook2023'}&startIndex=0&maxResults=30&key=${import.meta.env.VITE_API_KEY}`)
         .then((res)=> res.json())
         .then((data)=> setbooks(data.items))
         .catch((err)=> console.log(err))
@@ -78,7 +78,7 @@ function CategoryList() {
       <div className="h-full md:py-6 w-full py-16 md:px-6 md:w-3/4">
         <h2 className="text-2xl  md:px-2 font-semibold">Top {category} Books</h2>
          
-          {books.length !== 0 ? ( <div className="grid grid-cols-2 rounded-2xl gap-6 gap-y-6 lg:grid-cols-6 lg:gap-10 lg:gap-y-8 lg:p-3 lg:min-h-96"
+          {books?.length !== 0 ? ( <div className="grid grid-cols-2 rounded-2xl gap-6 gap-y-6 lg:grid-cols-6 lg:gap-10 lg:gap-y-8 lg:p-3 lg:min-h-96"
          >
         <Card key={books?.id} getFavorites= {()=> getFavorites} books = {books}/>
         </div>) :<div className="flex h-96 justify-center items-center"

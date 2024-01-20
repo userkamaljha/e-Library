@@ -17,7 +17,7 @@ function App() {
   };
   const debouncedSearch = debounce(async (value) => {
     try {
-      const apiUrl = value.trim() === '' ? `${import.meta.env.VITE_FETCH_URL}mostread&maxResults=30` : `${import.meta.env.VITE_FETCH_URL}${value}&maxResults=30`;
+      const apiUrl = value.trim() === '' ? `${import.meta.env.VITE_FETCH_URL}mostread&maxResults=30&key=${import.meta.env.VITE_API_KEY}` : `${import.meta.env.VITE_FETCH_URL}${value}&maxResults=30&key=${import.meta.env.VITE_API_KEY}`;
 
       const response = await axios.get(apiUrl);
       setbooks(response.data.items);
